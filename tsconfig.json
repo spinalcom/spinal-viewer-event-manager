@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "esnext",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "declarations",
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*.ts",
+  ],
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 2, // delete after migrating to vue3 (or nuxt3)
+    "experimentalTemplateCompilerOptions": {
+      "compatConfig": {
+        "MODE": 2
+      } // delete after migrating to vue3 (or nuxt3)
+    }
+  }
+}
