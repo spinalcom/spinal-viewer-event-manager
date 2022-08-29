@@ -41,21 +41,15 @@ export class EmitterViewerHandler {
         this.target = target;
         if (typeof this.target.emitter === 'undefined') {
             const emitter = mitt();
-            if (process.env.DEBUG_VIEWER_EMITTER)
-                emitter.on('*', (type, e) => console.log('EV=>', type, e));
             this.target.emitter = emitter;
         }
     }
     emit(event, data) {
         var _b, _c;
-        if (process.env.DEBUG_VIEWER_EMITTER)
-            console.log(this.name, 'emit', event);
         (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.emit(event, data);
     }
     on(event, callback) {
         var _b, _c;
-        if (process.env.DEBUG_VIEWER_EMITTER)
-            console.log(this.name, 'on', event);
         (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.on(event, callback);
     }
     off(event, handler) {

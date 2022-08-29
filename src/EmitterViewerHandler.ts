@@ -84,8 +84,6 @@ export class EmitterViewerHandler {
     this.target = target;
     if (typeof this.target.emitter === 'undefined') {
       const emitter = mitt<any>();
-      if (process.env.DEBUG_VIEWER_EMITTER)
-        emitter.on('*', (type, e) => console.log('EV=>', type, e));
       this.target.emitter = emitter;
     }
   }
@@ -124,7 +122,6 @@ export class EmitterViewerHandler {
     data: IDbIdModelAggregate[]
   ): void;
   emit(event: string, data?: any): void {
-    if (process.env.DEBUG_VIEWER_EMITTER) console.log(this.name, 'emit', event);
     this.target?.emitter?.emit(event, data);
   }
 
@@ -217,7 +214,6 @@ export class EmitterViewerHandler {
     callback: ViewerEventCallback<IDbIdModelAggregate[]>
   ): void;
   on(event: string, callback: (data?: any) => any) {
-    if (process.env.DEBUG_VIEWER_EMITTER) console.log(this.name, 'on', event);
     this.target?.emitter?.on(event, callback);
   }
 
