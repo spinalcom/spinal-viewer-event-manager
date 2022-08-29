@@ -90,19 +90,19 @@ export class EmitterViewerHandler {
     }
   }
 
-  emit(event: typeof VIEWER_ADD_LINE, data: IViewerLineObject): void;
-  emit(event: typeof VIEWER_REM_LINE, data: IViewerLineObject): void;
+  emit(event: typeof VIEWER_ADD_LINE, data: IViewerLineObject[]): void;
+  emit(event: typeof VIEWER_REM_LINE, data: IViewerLineObject[]): void;
   emit(event: typeof VIEWER_MOV_LINE, data: IViewerLineObject): void;
   emit(event: typeof VIEWER_LINE_CLICK, data: IViewerLineObject): void;
   emit(event: typeof VIEWER_LINE_MOUSEOVER, data: IViewerLineObject): void;
-  emit(event: typeof VIEWER_ADD_SPHERE, data: IViewerSphereObject): void;
-  emit(event: typeof VIEWER_REM_SPHERE, data: IViewerSphereObject): void;
+  emit(event: typeof VIEWER_ADD_SPHERE, data: IViewerSphereObject[]): void;
+  emit(event: typeof VIEWER_REM_SPHERE, data: IViewerSphereObject[]): void;
   emit(event: typeof VIEWER_MOV_SPHERE, data: IViewerSphereObject): void;
   emit(event: typeof VIEWER_SPHERE_CLICK, data: IViewerSphereObject): void;
   emit(event: typeof VIEWER_SPHERE_MOUSEOVER, data: IViewerSphereObject): void;
   emit(event: typeof VIEWER_REM_ALL_DRAWINGS): void;
-  emit(event: typeof VIEWER_ADD_SPRITE, data: IViewerSpriteObject): void;
-  emit(event: typeof VIEWER_REM_SPRITE, data: IViewerSpriteObject): void;
+  emit(event: typeof VIEWER_ADD_SPRITE, data: IViewerSpriteObject[]): void;
+  emit(event: typeof VIEWER_REM_SPRITE, data: IViewerSpriteObject[]): void;
   emit(event: typeof VIEWER_MOV_SPRITE, data: IViewerSpriteObject): void;
   emit(event: typeof VIEWER_REM_ALL_SPRITE): void;
   emit(event: typeof VIEWER_SPRITE_MOUSEOVER, data: IViewerSpriteObject): void;
@@ -130,11 +130,11 @@ export class EmitterViewerHandler {
 
   on(
     event: typeof VIEWER_ADD_LINE,
-    callback: ViewerEventCallback<IViewerLineObject>
+    callback: ViewerEventCallback<IViewerLineObject[]>
   ): void;
   on(
     event: typeof VIEWER_REM_LINE,
-    callback: ViewerEventCallback<IViewerLineObject>
+    callback: ViewerEventCallback<IViewerLineObject[]>
   ): void;
   on(
     event: typeof VIEWER_MOV_LINE,
@@ -150,11 +150,11 @@ export class EmitterViewerHandler {
   ): void;
   on(
     event: typeof VIEWER_ADD_SPHERE,
-    callback: ViewerEventCallback<IViewerSphereObject>
+    callback: ViewerEventCallback<IViewerSphereObject[]>
   ): void;
   on(
     event: typeof VIEWER_REM_SPHERE,
-    callback: ViewerEventCallback<IViewerSphereObject>
+    callback: ViewerEventCallback<IViewerSphereObject[]>
   ): void;
   on(
     event: typeof VIEWER_MOV_SPHERE,
@@ -171,11 +171,11 @@ export class EmitterViewerHandler {
   on(event: typeof VIEWER_REM_ALL_DRAWINGS, callback: () => void): void;
   on(
     event: typeof VIEWER_ADD_SPRITE,
-    callback: ViewerEventCallback<IViewerSpriteObject>
+    callback: ViewerEventCallback<IViewerSpriteObject[]>
   ): void;
   on(
     event: typeof VIEWER_REM_SPRITE,
-    callback: ViewerEventCallback<IViewerSpriteObject>
+    callback: ViewerEventCallback<IViewerSpriteObject[]>
   ): void;
   on(
     event: typeof VIEWER_MOV_SPRITE,
