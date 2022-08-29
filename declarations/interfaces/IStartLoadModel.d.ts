@@ -1,5 +1,5 @@
 import { SceneAlignMethod } from './SceneAlignMethod';
-export declare type startLoadModelType = {
+export interface IStartLoadModel {
     loadingType?: SceneAlignMethod;
     models: {
         name: string;
@@ -8,4 +8,4 @@ export declare type startLoadModelType = {
         dbids?: number[];
         aecPath?: string;
     }[];
-};
+}

@@ -23,11 +23,11 @@
  */
 
 // from viewer
-export const AGGREGATE_SELECTION_CHANGED_EVENT = 'aggregateSelection';
 export const VIEWER_INITIALIZED = 'viewer initalized';
+export const VIEWER_AGGREGATE_SELECTION_CHANGED = 'aggregateSelection';
 
 // control the viewer
-export const START_LOAD_MODEL = 'start load model';
+export const VIEWER_START_LOAD_MODEL = 'viewer start load model';
 export const VIEWER_OBJ_ISOLATE = 'viewer obj isolate';
 export const VIEWER_OBJ_SELECT = 'viewer obj select';
 export const VIEWER_OBJ_FIT_TO_VIEW = 'viewer obj fit to view';

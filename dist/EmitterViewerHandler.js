@@ -52,6 +52,15 @@ export class EmitterViewerHandler {
         var _b, _c;
         (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.on(event, callback);
     }
+    once(event, callback) {
+        var _b, _c;
+        const cb = (data) => {
+            var _b, _c;
+            (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.off(event, cb);
+            callback(data);
+        };
+        (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.on(event, cb);
+    }
     off(event, handler) {
         var _b, _c;
         (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.off(event, handler);

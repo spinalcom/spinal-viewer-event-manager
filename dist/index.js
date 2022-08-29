@@ -22,12 +22,12 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 export * from './EmitterViewerHandler';
+export * from './ViewerEventConstants';
 export * from './interfaces/IContextMenuButton';
 export * from './interfaces/IContextMenuGroup';
 export * from './interfaces/SceneAlignMethod';
-export * from './ViewerEventConstants';
 export * from './interfaces/IDbIdModelAggregate';
-export * from './interfaces/startLoadModelType';
+export * from './interfaces/IStartLoadModel';
 export * from './interfaces/IViewerColorObject';
 export * from './interfaces/IViewerSpriteObject';
 export * from './interfaces/IPos';
@@ -37,3 +37,6 @@ export * from './interfaces/IViewerSphereObject';
 export * from './interfaces/IViewerSpriteObject';
 export * from './interfaces/ViewerEventCallback';
 export * from './interfaces/IContextMenuEventClick';
+export * from './types/ViewerEventWithData';
+export * from './types/ViewerEventWithoutData';
+export * from './types/ViewerEvent';

@@ -24,7 +24,7 @@
 
 import { SceneAlignMethod } from './SceneAlignMethod';
 
-export type startLoadModelType = {
+export interface IStartLoadModel {
   loadingType?: SceneAlignMethod;
   models: {
     name: string;
@@ -33,4 +33,4 @@ export type startLoadModelType = {
     dbids?: number[];
     aecPath?: string;
   }[];
-};
+}

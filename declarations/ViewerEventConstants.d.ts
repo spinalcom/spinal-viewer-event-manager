@@ -1,6 +1,6 @@
-export declare const AGGREGATE_SELECTION_CHANGED_EVENT = "aggregateSelection";
 export declare const VIEWER_INITIALIZED = "viewer initalized";
-export declare const START_LOAD_MODEL = "start load model";
+export declare const VIEWER_AGGREGATE_SELECTION_CHANGED = "aggregateSelection";
+export declare const VIEWER_START_LOAD_MODEL = "viewer start load model";
 export declare const VIEWER_OBJ_ISOLATE = "viewer obj isolate";
 export declare const VIEWER_OBJ_SELECT = "viewer obj select";
 export declare const VIEWER_OBJ_FIT_TO_VIEW = "viewer obj fit to view";

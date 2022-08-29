@@ -22,52 +22,19 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 
-import type { startLoadModelType } from './interfaces/startLoadModelType';
-import type { IDbIdModelAggregate } from './interfaces/IDbIdModelAggregate';
-import type { IContextMenuGroup } from './interfaces/IContextMenuGroup';
-import type { IViewerColorObject } from './interfaces/IViewerColorObject';
-import type { IViewerSpriteObject } from './interfaces/IViewerSpriteObject';
-import type { IViewerLineObject } from './interfaces/IViewerLineObject';
-import type { IViewerSphereObject } from './interfaces/IViewerSphereObject';
 import type { ViewerEventCallback } from './interfaces/ViewerEventCallback';
-import type { IContextMenuEventClick } from './interfaces/IContextMenuEventClick';
-import type {
-  AGGREGATE_SELECTION_CHANGED_EVENT,
-  START_LOAD_MODEL,
-  VIEWER_INITIALIZED,
-  VIEWER_OBJ_ISOLATE,
-  VIEWER_OBJ_SELECT,
-  VIEWER_OBJ_FIT_TO_VIEW,
-  VIEWER_SET_CONTEXT_MENU,
-  VIEWER_OBJ_COLOR,
-  VIEWER_RESET_COLORS,
-  VIEWER_ADD_SPRITE,
-  VIEWER_REM_SPRITE,
-  VIEWER_MOV_SPRITE,
-  VIEWER_REM_ALL_SPRITE,
-  VIEWER_SPRITE_MOUSEOVER,
-  VIEWER_SPRITE_CLICK,
-  VIEWER_ADD_LINE,
-  VIEWER_REM_LINE,
-  VIEWER_MOV_LINE,
-  VIEWER_LINE_CLICK,
-  VIEWER_LINE_MOUSEOVER,
-  VIEWER_ADD_SPHERE,
-  VIEWER_REM_SPHERE,
-  VIEWER_MOV_SPHERE,
-  VIEWER_SPHERE_CLICK,
-  VIEWER_SPHERE_MOUSEOVER,
-  VIEWER_REM_ALL_DRAWINGS,
-  VIEWER_CONTEXT_MENU_CLICK,
-} from './ViewerEventConstants';
+import type { ViewerEventWithoutData } from './types/ViewerEventWithoutData';
+import type { ViewerEventWithData } from './types/ViewerEventWithData';
+import type { ViewerEvent } from './types/ViewerEvent';
 
 import mitt, { Emitter } from 'mitt';
 
 declare global {
   interface Window {
-    emitter: Emitter<any>;
+    emitter: Emitter<ViewerEvent>;
   }
 }
+
 export class EmitterViewerHandler {
   private target: Window = window;
 
@@ -88,165 +55,54 @@ export class EmitterViewerHandler {
     }
   }
 
-  emit(event: typeof VIEWER_ADD_LINE, data: IViewerLineObject[]): void;
-  emit(event: typeof VIEWER_REM_LINE, data: IViewerLineObject[]): void;
-  emit(event: typeof VIEWER_MOV_LINE, data: IViewerLineObject): void;
-  emit(event: typeof VIEWER_LINE_CLICK, data: IViewerLineObject): void;
-  emit(event: typeof VIEWER_LINE_MOUSEOVER, data: IViewerLineObject): void;
-  emit(event: typeof VIEWER_ADD_SPHERE, data: IViewerSphereObject[]): void;
-  emit(event: typeof VIEWER_REM_SPHERE, data: IViewerSphereObject[]): void;
-  emit(event: typeof VIEWER_MOV_SPHERE, data: IViewerSphereObject): void;
-  emit(event: typeof VIEWER_SPHERE_CLICK, data: IViewerSphereObject): void;
-  emit(event: typeof VIEWER_SPHERE_MOUSEOVER, data: IViewerSphereObject): void;
-  emit(event: typeof VIEWER_REM_ALL_DRAWINGS): void;
-  emit(event: typeof VIEWER_ADD_SPRITE, data: IViewerSpriteObject[]): void;
-  emit(event: typeof VIEWER_REM_SPRITE, data: IViewerSpriteObject[]): void;
-  emit(event: typeof VIEWER_MOV_SPRITE, data: IViewerSpriteObject): void;
-  emit(event: typeof VIEWER_REM_ALL_SPRITE): void;
-  emit(event: typeof VIEWER_SPRITE_MOUSEOVER, data: IViewerSpriteObject): void;
-  emit(event: typeof VIEWER_SPRITE_CLICK, data: IViewerSpriteObject): void;
-  emit(event: typeof VIEWER_OBJ_COLOR, data: IViewerColorObject[]): void;
-  emit(event: typeof VIEWER_RESET_COLORS): void;
-  emit(event: typeof VIEWER_SET_CONTEXT_MENU, data: IContextMenuGroup[]): void;
-  emit(
-    event: typeof VIEWER_CONTEXT_MENU_CLICK,
-    data: IContextMenuEventClick
+  emit<Key extends keyof ViewerEventWithData>(
+    event: Key,
+    data: ViewerEventWithData[Key]
   ): void;
-  emit(event: typeof VIEWER_OBJ_ISOLATE, data: IDbIdModelAggregate[]): void;
-  emit(event: typeof VIEWER_OBJ_SELECT, data: IDbIdModelAggregate[]): void;
-  emit(event: typeof VIEWER_OBJ_FIT_TO_VIEW, data: IDbIdModelAggregate[]): void;
-  emit(event: typeof START_LOAD_MODEL, data: startLoadModelType): void;
-  emit(event: typeof VIEWER_INITIALIZED): void;
-  emit(
-    event: typeof AGGREGATE_SELECTION_CHANGED_EVENT,
-    data: IDbIdModelAggregate[]
-  ): void;
-  emit(event: string, data?: any): void {
+  emit<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  emit<Key extends keyof ViewerEvent>(
+    event: Key,
+    data?: ViewerEvent[Key]
+  ): void {
     this.target?.emitter?.emit(event, data);
   }
 
-  on(
-    event: typeof VIEWER_ADD_LINE,
-    callback: ViewerEventCallback<IViewerLineObject[]>
+  on<Key extends keyof ViewerEventWithData>(
+    event: Key,
+    callback: ViewerEventCallback<ViewerEventWithData[Key]>
   ): void;
-  on(
-    event: typeof VIEWER_REM_LINE,
-    callback: ViewerEventCallback<IViewerLineObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_MOV_LINE,
-    callback: ViewerEventCallback<IViewerLineObject>
-  ): void;
-  on(
-    event: typeof VIEWER_LINE_CLICK,
-    callback: ViewerEventCallback<IViewerLineObject>
-  ): void;
-  on(
-    event: typeof VIEWER_LINE_MOUSEOVER,
-    callback: ViewerEventCallback<IViewerLineObject>
-  ): void;
-  on(
-    event: typeof VIEWER_ADD_SPHERE,
-    callback: ViewerEventCallback<IViewerSphereObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_REM_SPHERE,
-    callback: ViewerEventCallback<IViewerSphereObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_MOV_SPHERE,
-    callback: ViewerEventCallback<IViewerSphereObject>
-  ): void;
-  on(
-    event: typeof VIEWER_SPHERE_CLICK,
-    callback: ViewerEventCallback<IViewerSphereObject>
-  ): void;
-  on(
-    event: typeof VIEWER_SPHERE_MOUSEOVER,
-    callback: ViewerEventCallback<IViewerSphereObject>
-  ): void;
-  on(event: typeof VIEWER_REM_ALL_DRAWINGS, callback: () => void): void;
-  on(
-    event: typeof VIEWER_ADD_SPRITE,
-    callback: ViewerEventCallback<IViewerSpriteObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_REM_SPRITE,
-    callback: ViewerEventCallback<IViewerSpriteObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_MOV_SPRITE,
-    callback: ViewerEventCallback<IViewerSpriteObject>
-  ): void;
-  on(event: typeof VIEWER_REM_ALL_SPRITE, callback: () => void): void;
-  on(
-    event: typeof VIEWER_OBJ_COLOR,
-    callback: ViewerEventCallback<IViewerColorObject[]>
-  ): void;
-  on(
-    event: typeof VIEWER_SET_CONTEXT_MENU,
-    callback: ViewerEventCallback<IContextMenuGroup[]>
-  ): void;
-  on(
-    event: typeof VIEWER_CONTEXT_MENU_CLICK,
-    callback: ViewerEventCallback<IContextMenuEventClick>
-  ): void;
-
-  on(
-    event: typeof VIEWER_OBJ_ISOLATE,
-    callback: ViewerEventCallback<IDbIdModelAggregate[]>
-  ): void;
-  on(
-    event: typeof VIEWER_OBJ_SELECT,
-    callback: ViewerEventCallback<IDbIdModelAggregate[]>
-  ): void;
-  on(
-    event: typeof VIEWER_OBJ_FIT_TO_VIEW,
-    callback: ViewerEventCallback<IDbIdModelAggregate[]>
-  ): void;
-  on(
-    event: typeof START_LOAD_MODEL,
-    callback: ViewerEventCallback<startLoadModelType>
-  ): void;
-  on(event: typeof VIEWER_INITIALIZED, callback: () => void): void;
-  on(
-    event: typeof AGGREGATE_SELECTION_CHANGED_EVENT,
-    callback: ViewerEventCallback<IDbIdModelAggregate[]>
-  ): void;
-  on(event: string, callback: (data?: any) => any) {
+  on<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  on<Key extends keyof ViewerEvent>(
+    event: Key,
+    callback?: ViewerEventCallback<ViewerEvent[Key]>
+  ): void {
     this.target?.emitter?.on(event, callback);
   }
 
-  off(
-    event:
-      | typeof VIEWER_SET_CONTEXT_MENU
-      | typeof VIEWER_CONTEXT_MENU_CLICK
-      | typeof VIEWER_OBJ_ISOLATE
-      | typeof VIEWER_OBJ_SELECT
-      | typeof VIEWER_OBJ_FIT_TO_VIEW
-      | typeof AGGREGATE_SELECTION_CHANGED_EVENT
-      | typeof VIEWER_INITIALIZED
-      | typeof START_LOAD_MODEL
-      | typeof VIEWER_OBJ_COLOR
-      | typeof VIEWER_RESET_COLORS
-      | typeof VIEWER_ADD_SPRITE
-      | typeof VIEWER_REM_SPRITE
-      | typeof VIEWER_MOV_SPRITE
-      | typeof VIEWER_REM_ALL_SPRITE
-      | typeof VIEWER_SPRITE_CLICK
-      | typeof VIEWER_SPRITE_MOUSEOVER
-      | typeof VIEWER_ADD_LINE
-      | typeof VIEWER_REM_LINE
-      | typeof VIEWER_MOV_LINE
-      | typeof VIEWER_LINE_CLICK
-      | typeof VIEWER_LINE_MOUSEOVER
-      | typeof VIEWER_ADD_SPHERE
-      | typeof VIEWER_REM_SPHERE
-      | typeof VIEWER_MOV_SPHERE
-      | typeof VIEWER_SPHERE_CLICK
-      | typeof VIEWER_SPHERE_MOUSEOVER
-      | typeof VIEWER_REM_ALL_DRAWINGS,
-    handler: (data?: any) => any
+  once<Key extends keyof ViewerEventWithData>(
+    event: Key,
+    callback: ViewerEventCallback<ViewerEventWithData[Key]>
+  ): void;
+  once<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  once<Key extends keyof ViewerEvent>(
+    event: Key,
+    callback?: ViewerEventCallback<ViewerEvent[Key]>
+  ): void {
+    const cb = (data: any) => {
+      this.target?.emitter?.off(event, cb);
+      callback(data);
+    };
+    this.target?.emitter?.on(event, cb);
+  }
+
+  off<Key extends keyof ViewerEventWithData>(
+    event: Key,
+    handler: ViewerEventCallback<ViewerEventWithData[Key]>
+  ): void;
+  off<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  off<Key extends keyof ViewerEvent>(
+    event: Key,
+    handler?: ViewerEventCallback<ViewerEvent[Key]>
   ): void {
     this.target?.emitter?.off(event, handler);
   }
