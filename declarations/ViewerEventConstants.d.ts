@@ -1,5 +1,6 @@
 export declare const VIEWER_INITIALIZED = "viewer initalized";
 export declare const VIEWER_AGGREGATE_SELECTION_CHANGED = "aggregateSelection";
+export declare const VIEWER_SET_CAMERA = "viewer set camera";
 export declare const VIEWER_START_LOAD_MODEL = "viewer start load model";
 export declare const VIEWER_OBJ_ISOLATE = "viewer obj isolate";
 export declare const VIEWER_OBJ_SELECT = "viewer obj select";

@@ -54,11 +54,13 @@ import type {
   VIEWER_SPHERE_CLICK,
   VIEWER_SPHERE_MOUSEOVER,
   VIEWER_CONTEXT_MENU_CLICK,
+  VIEWER_SET_CAMERA,
 } from '../ViewerEventConstants';
 
 export type ViewerEventWithData = {
   [VIEWER_AGGREGATE_SELECTION_CHANGED]: IDbIdModelAggregate[];
   [VIEWER_START_LOAD_MODEL]: IStartLoadModel;
+  [VIEWER_SET_CAMERA]: EViewerSetCamera;
   [VIEWER_OBJ_ISOLATE]: IDbIdModelAggregate[];
   [VIEWER_OBJ_SELECT]: IDbIdModelAggregate[];
   [VIEWER_OBJ_FIT_TO_VIEW]: IDbIdModelAggregate[];

@@ -24,6 +24,8 @@
 // from viewer
 export const VIEWER_INITIALIZED = 'viewer initalized';
 export const VIEWER_AGGREGATE_SELECTION_CHANGED = 'aggregateSelection';
+// set camera orientation
+export const VIEWER_SET_CAMERA = 'viewer set camera';
 // control the viewer
 export const VIEWER_START_LOAD_MODEL = 'viewer start load model';
 export const VIEWER_OBJ_ISOLATE = 'viewer obj isolate';

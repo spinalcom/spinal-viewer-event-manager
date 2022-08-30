@@ -10,6 +10,7 @@
 | VIEWER_REM_ALL_DRAWINGS            |                        |
 | VIEWER_AGGREGATE_SELECTION_CHANGED | IDbIdModelAggregate[]  |
 | VIEWER_START_LOAD_MODEL            | IStartLoadModel        |
+| VIEWER_SET_CAMERA                  | EViewerSetCamera       |
 | VIEWER_OBJ_ISOLATE                 | IDbIdModelAggregate[]  |
 | VIEWER_OBJ_SELECT                  | IDbIdModelAggregate[]  |
 | VIEWER_OBJ_FIT_TO_VIEW             | IDbIdModelAggregate[]  |
