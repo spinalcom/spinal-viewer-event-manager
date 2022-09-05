@@ -71,7 +71,10 @@ export class EmitterViewerHandler {
     event: Key,
     callback: ViewerEventCallback<ViewerEventWithData[Key]>
   ): void;
-  on<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  on<Key extends keyof ViewerEventWithoutData>(
+    event: Key,
+    callback: () => void
+  ): void;
   on<Key extends keyof ViewerEvent>(
     event: Key,
     callback?: ViewerEventCallback<ViewerEvent[Key]>
@@ -83,7 +86,10 @@ export class EmitterViewerHandler {
     event: Key,
     callback: ViewerEventCallback<ViewerEventWithData[Key]>
   ): void;
-  once<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  once<Key extends keyof ViewerEventWithoutData>(
+    event: Key,
+    callback: () => void
+  ): void;
   once<Key extends keyof ViewerEvent>(
     event: Key,
     callback?: ViewerEventCallback<ViewerEvent[Key]>
@@ -99,7 +105,10 @@ export class EmitterViewerHandler {
     event: Key,
     handler: ViewerEventCallback<ViewerEventWithData[Key]>
   ): void;
-  off<Key extends keyof ViewerEventWithoutData>(event: Key): void;
+  off<Key extends keyof ViewerEventWithoutData>(
+    event: Key,
+    handler: () => void
+  ): void;
   off<Key extends keyof ViewerEvent>(
     event: Key,
     handler?: ViewerEventCallback<ViewerEvent[Key]>
