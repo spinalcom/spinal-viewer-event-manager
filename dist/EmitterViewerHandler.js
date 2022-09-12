@@ -54,8 +54,8 @@ export class EmitterViewerHandler {
             (_e = (_d = this.target) === null || _d === void 0 ? void 0 : _d.emitter) === null || _e === void 0 ? void 0 : _e.off('*', this.logAll);
         }
     }
-    logAll(type, e) {
-        console.log('EV=>', type, e);
+    logAll() {
+        console.log('EV=>', ...arguments);
     }
     static getInstance() {
         return __classPrivateFieldGet(EmitterViewerHandler, _a, "f", _EmitterViewerHandler_instance);

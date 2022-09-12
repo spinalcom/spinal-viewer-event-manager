@@ -53,8 +53,8 @@ export class EmitterViewerHandler {
     }
   }
 
-  private logAll(type: string, e: any): void {
-    console.log('EV=>', type, e);
+  private logAll(): void {
+    console.log('EV=>', ...arguments);
   }
 
   // singleton
