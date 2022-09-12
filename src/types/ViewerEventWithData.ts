@@ -30,6 +30,7 @@ import type { IViewerSpriteObject } from '../interfaces/IViewerSpriteObject';
 import type { IViewerLineObject } from '../interfaces/IViewerLineObject';
 import type { IViewerSphereObject } from '../interfaces/IViewerSphereObject';
 import type { IContextMenuEventClick } from '../interfaces/IContextMenuEventClick';
+import type { EViewerSetCamera } from '../interfaces/EViewerSetCamera';
 import type {
   VIEWER_AGGREGATE_SELECTION_CHANGED,
   VIEWER_START_LOAD_MODEL,

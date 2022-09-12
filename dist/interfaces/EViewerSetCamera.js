@@ -21,7 +21,7 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
-var EViewerSetCamera;
+export var EViewerSetCamera;
 (function (EViewerSetCamera) {
     EViewerSetCamera[EViewerSetCamera["top"] = 0] = "top";
     EViewerSetCamera[EViewerSetCamera["front"] = 1] = "front";

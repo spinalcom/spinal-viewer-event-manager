@@ -1,4 +1,4 @@
-declare enum EViewerSetCamera {
+export declare enum EViewerSetCamera {
     'top' = 0,
     'front' = 1,
     'right' = 2,

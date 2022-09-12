@@ -40,6 +40,8 @@ export * from './interfaces/IViewerSpriteObject';
 export * from './interfaces/ViewerEventCallback';
 export * from './interfaces/IContextMenuEventClick';
 
+export * from './interfaces/EViewerSetCamera';
+
 export * from './types/ViewerEventWithData';
 export * from './types/ViewerEventWithoutData';
 export * from './types/ViewerEvent';

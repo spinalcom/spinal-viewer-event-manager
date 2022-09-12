@@ -21,7 +21,8 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
-enum EViewerSetCamera {
+
+export enum EViewerSetCamera {
   'top',
   'front',
   'right',
