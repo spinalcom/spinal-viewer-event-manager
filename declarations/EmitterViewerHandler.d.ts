@@ -11,9 +11,12 @@ declare global {
 export declare class EmitterViewerHandler {
     #private;
     private target;
+    private name;
+    get loging(): boolean;
+    set loging(v: boolean);
+    private logAll;
     private constructor();
     static getInstance(): EmitterViewerHandler;
-    name: string;
     setTarget(target: Window, name?: string): void;
     emit<Key extends keyof ViewerEventWithData>(event: Key, data: ViewerEventWithData[Key]): void;
     emit<Key extends keyof ViewerEventWithoutData>(event: Key): void;

@@ -1,6 +1,8 @@
 # spinal-viewer-event-manager
 
-# table of events
+Event manager used in the spinal-env-pam-apps-portail to manage the viewer.
+
+## table of events
 
 | event                              | data type              |
 | ---------------------------------- | ---------------------- |
@@ -32,3 +34,37 @@
 | VIEWER_MOV_SPHERE                  | IViewerSphereObject[]  |
 | VIEWER_SPHERE_CLICK                | IViewerSphereObject    |
 | VIEWER_SPHERE_MOUSEOVER            | IViewerSphereObject    |
+
+## usage
+
+```ts
+import {
+  VIEWER_OBJ_SELECT,
+  VIEWER_INITIALIZED,
+  EmitterViewerHandler,
+  IDbIdModelAggregate,
+} from 'spinal-viewer-event-manager';
+
+// get singleton instance
+const emitterHandler = EmitterViewerHandler.getInstance();
+
+// enable loging
+emitterHandler.loging = true;
+
+// set target window (either window or window.parent if iframe)
+emitterHandler.setTarget(window, 'a name for the loging');
+
+// create callback functions
+function callbackObjectSelect(data: IDbIdModelAggregate[]) {
+  // do something
+}
+
+// listen to events
+emitterHandler.once(VIEWER_INITIALIZED, () => {
+  // callback will be called only once
+});
+emitterHandler.on(VIEWER_OBJ_SELECT, callbackObjectSelect);
+
+// stop listen to events
+emitterHandler.off(VIEWER_OBJ_SELECT, callbackObjectSelect);
+```

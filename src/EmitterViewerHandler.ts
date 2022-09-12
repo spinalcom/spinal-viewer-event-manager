@@ -37,6 +37,25 @@ declare global {
 
 export class EmitterViewerHandler {
   private target: Window = window;
+  private name: string = '';
+  #loging = false;
+  #started = false;
+
+  public get loging(): boolean {
+    return this.#loging;
+  }
+  public set loging(v: boolean) {
+    this.#loging = v;
+    if (v) {
+      this.target?.emitter?.on('*', this.logAll);
+    } else {
+      this.target?.emitter?.off('*', this.logAll);
+    }
+  }
+
+  private logAll(type: string, e: any): void {
+    console.log('EV=>', type, e);
+  }
 
   // singleton
   static #instance: EmitterViewerHandler = new EmitterViewerHandler();
@@ -44,7 +63,6 @@ export class EmitterViewerHandler {
   public static getInstance(): EmitterViewerHandler {
     return EmitterViewerHandler.#instance;
   }
-  name: string = '';
 
   public setTarget(target: Window, name?: string): void {
     this.name = name ? name : '';
@@ -53,6 +71,11 @@ export class EmitterViewerHandler {
       const emitter = mitt<any>();
       this.target.emitter = emitter;
     }
+
+    if (this.#started === false && this.loging) {
+      this.target.emitter.on('*', this.logAll);
+    }
+    this.#started = true;
   }
 
   emit<Key extends keyof ViewerEventWithData>(
@@ -64,6 +87,7 @@ export class EmitterViewerHandler {
     event: Key,
     data?: ViewerEvent[Key]
   ): void {
+    if (this.loging) console.log(`[${this.name}] emit '${event}'`, data);
     this.target?.emitter?.emit(event, data);
   }
 
@@ -79,6 +103,7 @@ export class EmitterViewerHandler {
     event: Key,
     callback?: ViewerEventCallback<ViewerEvent[Key]>
   ): void {
+    if (this.loging) console.log(`[${this.name}] start listen '${event}'`);
     this.target?.emitter?.on(event, callback);
   }
 
@@ -94,6 +119,8 @@ export class EmitterViewerHandler {
     event: Key,
     callback?: ViewerEventCallback<ViewerEvent[Key]>
   ): void {
+    if (this.loging) console.log(`[${this.name}] start listen once '${event}'`);
+
     const cb = (data: any) => {
       this.target?.emitter?.off(event, cb);
       callback(data);
@@ -113,6 +140,7 @@ export class EmitterViewerHandler {
     event: Key,
     handler?: ViewerEventCallback<ViewerEvent[Key]>
   ): void {
+    if (this.loging) console.log(`[${this.name}] stop listen '${event}'`);
     this.target?.emitter?.off(event, handler);
   }
 }
