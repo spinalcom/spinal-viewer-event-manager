@@ -15,6 +15,7 @@ export declare const VIEWER_MOV_SPRITE = "viewer mov sprite";
 export declare const VIEWER_REM_ALL_SPRITE = "viewer rem all sprite";
 export declare const VIEWER_SPRITE_CLICK = "viewer sprite click";
 export declare const VIEWER_SPRITE_MOUSEOVER = "viewer sprite mouseover";
+export declare const VIEWER_SPRITE_SELECT = "viewer sprite select";
 export declare const VIEWER_ADD_LINE = "viewer add line";
 export declare const VIEWER_REM_LINE = "viewer rem line";
 export declare const VIEWER_MOV_LINE = "viewer mov line";

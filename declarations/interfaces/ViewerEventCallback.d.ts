@@ -1,1 +1,1 @@
-export declare type ViewerEventCallback<T> = (data?: T) => void;
+export type ViewerEventCallback<T> = (data?: T) => void;

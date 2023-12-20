@@ -24,6 +24,7 @@ Event manager used in the spinal-env-pam-apps-portail to manage the viewer.
 | VIEWER_MOV_SPRITE                  | IViewerSpriteObject[]  |
 | VIEWER_SPRITE_MOUSEOVER            | IViewerSpriteObject    |
 | VIEWER_SPRITE_CLICK                | IViewerSpriteObject    |
+| VIEWER_SPRITE_SELECT               | IViewerSpriteObject    |
 | VIEWER_ADD_LINE                    | IViewerLineObject[]    |
 | VIEWER_REM_LINE                    | IViewerLineObject[]    |
 | VIEWER_MOV_LINE                    | IViewerLineObject[]    |

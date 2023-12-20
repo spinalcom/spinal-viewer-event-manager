@@ -44,6 +44,7 @@ export const VIEWER_MOV_SPRITE = 'viewer mov sprite';
 export const VIEWER_REM_ALL_SPRITE = 'viewer rem all sprite';
 export const VIEWER_SPRITE_CLICK = 'viewer sprite click';
 export const VIEWER_SPRITE_MOUSEOVER = 'viewer sprite mouseover';
+export const VIEWER_SPRITE_SELECT = 'viewer sprite select';
 // draw lines
 export const VIEWER_ADD_LINE = 'viewer add line';
 export const VIEWER_REM_LINE = 'viewer rem line';

@@ -44,6 +44,7 @@ import type {
   VIEWER_MOV_SPRITE,
   VIEWER_SPRITE_MOUSEOVER,
   VIEWER_SPRITE_CLICK,
+  VIEWER_SPRITE_SELECT,
   VIEWER_ADD_LINE,
   VIEWER_REM_LINE,
   VIEWER_MOV_LINE,
@@ -73,6 +74,7 @@ export type ViewerEventWithData = {
   [VIEWER_MOV_SPRITE]: IViewerSpriteObject[];
   [VIEWER_SPRITE_MOUSEOVER]: IViewerSpriteObject;
   [VIEWER_SPRITE_CLICK]: IViewerSpriteObject;
+  [VIEWER_SPRITE_SELECT]: IViewerSpriteObject;
   [VIEWER_ADD_LINE]: IViewerLineObject[];
   [VIEWER_REM_LINE]: IViewerLineObject[];
   [VIEWER_MOV_LINE]: IViewerLineObject[];

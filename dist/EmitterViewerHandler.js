@@ -35,12 +35,6 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 var _a, _EmitterViewerHandler_loging, _EmitterViewerHandler_started, _EmitterViewerHandler_instance;
 import mitt from 'mitt';
 export class EmitterViewerHandler {
-    constructor() {
-        this.target = window;
-        this.name = '';
-        _EmitterViewerHandler_loging.set(this, false);
-        _EmitterViewerHandler_started.set(this, false);
-    }
     get loging() {
         return __classPrivateFieldGet(this, _EmitterViewerHandler_loging, "f");
     }
@@ -56,6 +50,12 @@ export class EmitterViewerHandler {
     }
     logAll() {
         console.log('EV=>', ...arguments);
+    }
+    constructor() {
+        this.target = window;
+        this.name = '';
+        _EmitterViewerHandler_loging.set(this, false);
+        _EmitterViewerHandler_started.set(this, false);
     }
     static getInstance() {
         return __classPrivateFieldGet(EmitterViewerHandler, _a, "f", _EmitterViewerHandler_instance);
