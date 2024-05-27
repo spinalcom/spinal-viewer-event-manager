@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2022 SpinalCom - www.spinalcom.com
  *
@@ -21,23 +22,38 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
-export * from './EmitterViewerHandler';
-export * from './ViewerEventConstants';
-export * from './interfaces/IContextMenuButton';
-export * from './interfaces/IContextMenuGroup';
-export * from './interfaces/SceneAlignMethod';
-export * from './interfaces/IDbIdModelAggregate';
-export * from './interfaces/IStartLoadModel';
-export * from './interfaces/IViewerColorObject';
-export * from './interfaces/IViewerSpriteObject';
-export * from './interfaces/IPos';
-export * from './interfaces/IViewerDrawableObject';
-export * from './interfaces/IViewerLineObject';
-export * from './interfaces/IViewerSphereObject';
-export * from './interfaces/IViewerSpriteObject';
-export * from './interfaces/ViewerEventCallback';
-export * from './interfaces/IContextMenuEventClick';
-export * from './interfaces/EViewerSetCamera';
-export * from './types/ViewerEventWithData';
-export * from './types/ViewerEventWithoutData';
-export * from './types/ViewerEvent';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./EmitterViewerHandler"), exports);
+__exportStar(require("./ViewerEventConstants"), exports);
+__exportStar(require("./interfaces/IContextMenuButton"), exports);
+__exportStar(require("./interfaces/IContextMenuGroup"), exports);
+__exportStar(require("./interfaces/SceneAlignMethod"), exports);
+__exportStar(require("./interfaces/IDbIdModelAggregate"), exports);
+__exportStar(require("./interfaces/IStartLoadModel"), exports);
+__exportStar(require("./interfaces/IViewerColorObject"), exports);
+__exportStar(require("./interfaces/IViewerSpriteObject"), exports);
+__exportStar(require("./interfaces/IPos"), exports);
+__exportStar(require("./interfaces/IViewerDrawableObject"), exports);
+__exportStar(require("./interfaces/IViewerLineObject"), exports);
+__exportStar(require("./interfaces/IViewerSphereObject"), exports);
+__exportStar(require("./interfaces/IViewerSpriteObject"), exports);
+__exportStar(require("./interfaces/ViewerEventCallback"), exports);
+__exportStar(require("./interfaces/IContextMenuEventClick"), exports);
+__exportStar(require("./interfaces/EViewerSetCamera"), exports);
+__exportStar(require("./types/ViewerEventWithData"), exports);
+__exportStar(require("./types/ViewerEventWithoutData"), exports);
+__exportStar(require("./types/ViewerEvent"), exports);

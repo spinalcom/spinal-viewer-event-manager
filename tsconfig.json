@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "esnext",
+    "module": "CommonJs",
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "moduleResolution": "node",

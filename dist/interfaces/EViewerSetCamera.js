@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2022 SpinalCom - www.spinalcom.com
  *
@@ -21,7 +22,9 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
-export var EViewerSetCamera;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EViewerSetCamera = void 0;
+var EViewerSetCamera;
 (function (EViewerSetCamera) {
     EViewerSetCamera[EViewerSetCamera["top"] = 0] = "top";
     EViewerSetCamera[EViewerSetCamera["front"] = 1] = "front";
@@ -49,4 +52,4 @@ export var EViewerSetCamera;
     EViewerSetCamera[EViewerSetCamera["back,bottom,right"] = 23] = "back,bottom,right";
     EViewerSetCamera[EViewerSetCamera["front,bottom,left"] = 24] = "front,bottom,left";
     EViewerSetCamera[EViewerSetCamera["back,bottom,left"] = 25] = "back,bottom,left";
-})(EViewerSetCamera || (EViewerSetCamera = {}));
+})(EViewerSetCamera = exports.EViewerSetCamera || (exports.EViewerSetCamera = {}));

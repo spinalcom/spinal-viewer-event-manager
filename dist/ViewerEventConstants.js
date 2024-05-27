@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2022 SpinalCom - www.spinalcom.com
  *
@@ -21,40 +22,42 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VIEWER_REM_ALL_DRAWINGS = exports.VIEWER_SPHERE_MOUSEOVER = exports.VIEWER_SPHERE_CLICK = exports.VIEWER_MOV_SPHERE = exports.VIEWER_REM_SPHERE = exports.VIEWER_ADD_SPHERE = exports.VIEWER_LINE_MOUSEOVER = exports.VIEWER_LINE_CLICK = exports.VIEWER_MOV_LINE = exports.VIEWER_REM_LINE = exports.VIEWER_ADD_LINE = exports.VIEWER_SPRITE_SELECT = exports.VIEWER_SPRITE_MOUSEOVER = exports.VIEWER_SPRITE_CLICK = exports.VIEWER_REM_ALL_SPRITE = exports.VIEWER_MOV_SPRITE = exports.VIEWER_REM_SPRITE = exports.VIEWER_ADD_SPRITE = exports.VIEWER_RESET_COLORS = exports.VIEWER_OBJ_COLOR = exports.VIEWER_CONTEXT_MENU_CLICK = exports.VIEWER_SET_CONTEXT_MENU = exports.VIEWER_OBJ_FIT_TO_VIEW = exports.VIEWER_OBJ_SELECT = exports.VIEWER_OBJ_ISOLATE = exports.VIEWER_START_LOAD_MODEL = exports.VIEWER_SET_CAMERA = exports.VIEWER_AGGREGATE_SELECTION_CHANGED = exports.VIEWER_INITIALIZED = void 0;
 // from viewer
-export const VIEWER_INITIALIZED = 'viewer initalized';
-export const VIEWER_AGGREGATE_SELECTION_CHANGED = 'aggregateSelection';
+exports.VIEWER_INITIALIZED = 'viewer initalized';
+exports.VIEWER_AGGREGATE_SELECTION_CHANGED = 'aggregateSelection';
 // set camera orientation
-export const VIEWER_SET_CAMERA = 'viewer set camera';
+exports.VIEWER_SET_CAMERA = 'viewer set camera';
 // control the viewer
-export const VIEWER_START_LOAD_MODEL = 'viewer start load model';
-export const VIEWER_OBJ_ISOLATE = 'viewer obj isolate';
-export const VIEWER_OBJ_SELECT = 'viewer obj select';
-export const VIEWER_OBJ_FIT_TO_VIEW = 'viewer obj fit to view';
+exports.VIEWER_START_LOAD_MODEL = 'viewer start load model';
+exports.VIEWER_OBJ_ISOLATE = 'viewer obj isolate';
+exports.VIEWER_OBJ_SELECT = 'viewer obj select';
+exports.VIEWER_OBJ_FIT_TO_VIEW = 'viewer obj fit to view';
 // context menu
-export const VIEWER_SET_CONTEXT_MENU = 'viewer set contextmenu';
-export const VIEWER_CONTEXT_MENU_CLICK = 'viewer contextmenu clicked';
+exports.VIEWER_SET_CONTEXT_MENU = 'viewer set contextmenu';
+exports.VIEWER_CONTEXT_MENU_CLICK = 'viewer contextmenu clicked';
 // color
-export const VIEWER_OBJ_COLOR = 'viewer obj color';
-export const VIEWER_RESET_COLORS = 'viewer reset colors';
+exports.VIEWER_OBJ_COLOR = 'viewer obj color';
+exports.VIEWER_RESET_COLORS = 'viewer reset colors';
 // sprites
-export const VIEWER_ADD_SPRITE = 'viewer add sprite';
-export const VIEWER_REM_SPRITE = 'viewer rem sprite';
-export const VIEWER_MOV_SPRITE = 'viewer mov sprite';
-export const VIEWER_REM_ALL_SPRITE = 'viewer rem all sprite';
-export const VIEWER_SPRITE_CLICK = 'viewer sprite click';
-export const VIEWER_SPRITE_MOUSEOVER = 'viewer sprite mouseover';
-export const VIEWER_SPRITE_SELECT = 'viewer sprite select';
+exports.VIEWER_ADD_SPRITE = 'viewer add sprite';
+exports.VIEWER_REM_SPRITE = 'viewer rem sprite';
+exports.VIEWER_MOV_SPRITE = 'viewer mov sprite';
+exports.VIEWER_REM_ALL_SPRITE = 'viewer rem all sprite';
+exports.VIEWER_SPRITE_CLICK = 'viewer sprite click';
+exports.VIEWER_SPRITE_MOUSEOVER = 'viewer sprite mouseover';
+exports.VIEWER_SPRITE_SELECT = 'viewer sprite select';
 // draw lines
-export const VIEWER_ADD_LINE = 'viewer add line';
-export const VIEWER_REM_LINE = 'viewer rem line';
-export const VIEWER_MOV_LINE = 'viewer mov line';
-export const VIEWER_LINE_CLICK = 'viewer line click';
-export const VIEWER_LINE_MOUSEOVER = 'viewer line mouseover';
+exports.VIEWER_ADD_LINE = 'viewer add line';
+exports.VIEWER_REM_LINE = 'viewer rem line';
+exports.VIEWER_MOV_LINE = 'viewer mov line';
+exports.VIEWER_LINE_CLICK = 'viewer line click';
+exports.VIEWER_LINE_MOUSEOVER = 'viewer line mouseover';
 // draw spheres
-export const VIEWER_ADD_SPHERE = 'viewer add sphere';
-export const VIEWER_REM_SPHERE = 'viewer rem sphere';
-export const VIEWER_MOV_SPHERE = 'viewer mov sphere';
-export const VIEWER_SPHERE_CLICK = 'viewer sphere click';
-export const VIEWER_SPHERE_MOUSEOVER = 'viewer sphere mouseover';
-export const VIEWER_REM_ALL_DRAWINGS = 'viewer rem all drawings';
+exports.VIEWER_ADD_SPHERE = 'viewer add sphere';
+exports.VIEWER_REM_SPHERE = 'viewer rem sphere';
+exports.VIEWER_MOV_SPHERE = 'viewer mov sphere';
+exports.VIEWER_SPHERE_CLICK = 'viewer sphere click';
+exports.VIEWER_SPHERE_MOUSEOVER = 'viewer sphere mouseover';
+exports.VIEWER_REM_ALL_DRAWINGS = 'viewer rem all drawings';

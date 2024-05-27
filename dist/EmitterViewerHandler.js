@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Copyright 2022 SpinalCom - www.spinalcom.com
  *
@@ -33,8 +34,10 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
 var _a, _EmitterViewerHandler_loging, _EmitterViewerHandler_started, _EmitterViewerHandler_instance;
-import mitt from 'mitt';
-export class EmitterViewerHandler {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmitterViewerHandler = void 0;
+const mitt_1 = require("mitt");
+class EmitterViewerHandler {
     get loging() {
         return __classPrivateFieldGet(this, _EmitterViewerHandler_loging, "f");
     }
@@ -64,7 +67,7 @@ export class EmitterViewerHandler {
         this.name = name ? name : '';
         this.target = target;
         if (typeof this.target.emitter === 'undefined') {
-            const emitter = mitt();
+            const emitter = (0, mitt_1.default)();
             this.target.emitter = emitter;
         }
         if (__classPrivateFieldGet(this, _EmitterViewerHandler_started, "f") === false && this.loging) {
@@ -102,6 +105,7 @@ export class EmitterViewerHandler {
         (_c = (_b = this.target) === null || _b === void 0 ? void 0 : _b.emitter) === null || _c === void 0 ? void 0 : _c.off(event, handler);
     }
 }
+exports.EmitterViewerHandler = EmitterViewerHandler;
 _a = EmitterViewerHandler, _EmitterViewerHandler_loging = new WeakMap(), _EmitterViewerHandler_started = new WeakMap();
 // singleton
 _EmitterViewerHandler_instance = { value: new EmitterViewerHandler() };
